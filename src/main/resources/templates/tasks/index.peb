@@ -1,9 +1,8 @@
-{% extends "_layout/base.peb" %}
+{% extends "base.peb" %}
 
 {% block content %}
 <h1>Tasks</h1>
 
-{# Add Task Form - Week 6 #}
 <section aria-labelledby="add-heading">
   <h2 id="add-heading">Add a new task</h2>
   <form action="/tasks" method="post"
@@ -14,24 +13,12 @@
     <input type="text" id="title" name="title" required
            placeholder="e.g., Buy milk" aria-describedby="title-hint">
     <small id="title-hint">Keep it short and specific.</small>
-    {# Minor issue: unlabeled input for Week 7 Lab 2 #}
-    <input type="text" name="priority" placeholder="Priority (optional)">
     <button type="submit">Add Task</button>
   </form>
 </section>
 
-{# Task List - Week 6 (inline, no partials) #}
-{# TODO: Week 7 Lab 1 Activity 2 Step 4
-   Update this section to use conditional includes:
-   - Add {% if editingId and editingId == task.id %} check
-   - Include tasks/_edit.peb when editing
-   - Include tasks/_item.peb when viewing
-   - See mdbook for full implementation
-#}
 <section aria-labelledby="list-heading">
   <h2 id="list-heading">Current tasks ({{ tasks | length }})</h2>
-  {# Minor Issue: Image without alt text for Week 7 Lab 2 discovery #}
-  <img src="/static/img/icon.png" width="16" height="16">
   <ul id="task-list">
     {% for task in tasks %}
       <li id="task-{{ task.id }}">
