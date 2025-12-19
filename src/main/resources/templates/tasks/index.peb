@@ -23,6 +23,7 @@
     <label for="query">Filter tasks:</label>
     <input type="text" id="query" name="query" placeholder="Filter tasks..." aria-describedby="query-hint">
     <small id="query-hint">Type to filter the list below.</small>
+    <button type="submit">Filter</button>
   </form>
   <ul id="task-list">
     {% for task in tasks %}
