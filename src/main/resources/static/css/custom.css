@@ -262,5 +262,17 @@ select:focus {
    Students will discover this with axe DevTools and fix in Week 7 Lab 2 */
 button[type="submit"],
 button {
-  color: #6c757d;
+  color: #fff; /* Ensure button text is white for contrast */
+}
+
+.delete-btn {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  border: 1px solid #b02a37 !important;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37 !important;
 }

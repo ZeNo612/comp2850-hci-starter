@@ -16,13 +16,13 @@ import java.util.UUID
  * val session = call.sessions.get<SessionData>() ?: SessionData().also {
  *     call.sessions.set(it)
  * }
- * Logger.write(session.id, ...)
+ * Logger.write(session.user_id, ...)
  * ```
  *
- * @property id Unique session identifier (UUID)
+ * @property user_id Unique session identifier (random hex string)
  */
 data class SessionData(
-    val id: String = UUID.randomUUID().toString(),
+    val user_id: String? = null,
 )
 
 /**

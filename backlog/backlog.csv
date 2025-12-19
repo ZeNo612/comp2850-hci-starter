@@ -1,1 +1,9 @@
 id,title,story_ref,story_type,need,type,severity,inclusion_risk,evidence,notes,candidate_fix
+1,Filter selection resets on page reload,stories.md#S1,Job story,Reduce cognitive load,Usability,Medium,"Cognitive,Memory","P-A notes L5",Doesn't persist filter state in session or URL,false
+2,No confirmation after form submission,stories.md#S2,Job story,Trust & feedback,Accessibility,High,"Cognitive,SR,Low digital literacy","P-A notes L12",HTMX good but no-JS gives no feedback (PRG redirect),true
+3,Delete button not keyboard-accessible,stories.md#S3,Job story,Full keyboard access,Accessibility,High,"Keyboard,Motor","P-A notes L20; WCAG 2.1.1",Focus order unclear; needs Tab-only test,true
+4,Text contrast below 4.5:1,stories.md#S4,Job story,Visibility,Accessibility,Medium,"Low vision,Colour-blind","P-A notes L28; WCAG 1.4.3",Pico.css gray = 4.2:1 (fails AA),false
+5,No progress indicator,stories.md#S5,Job story,Motivation,Usability,Low,Cognitive,"P-A notes L35",Nice-to-have; defer,false
+6,Error messages not persistent in no-JS,Internal,Pain point,Error recovery,Accessibility,High,"Cognitive,SR","WCAG 3.3.1",PRG redirect loses error context,true
+7,Skip link not SR-tested,Internal audit,WCAG check,Bypass blocks,Accessibility,Medium,SR,"WCAG 2.4.1",Keyboard tested but not SR announcement,false
+8,Live region polite (should be assertive for errors),Internal audit,WCAG check,Error announcement,Accessibility,High,SR,"WCAG 4.1.3",Errors need aria-live=assertive,false

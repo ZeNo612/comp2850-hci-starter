@@ -13,6 +13,7 @@ import routes.configureHealthCheck
 import utils.SessionData
 import java.io.StringWriter
 import io.ktor.util.*
+import java.util.UUID
 
 /**
  * NOTE FOR NON-INTELLIJ IDEs (VSCode, Eclipse, etc.):
@@ -149,7 +150,7 @@ suspend fun ApplicationCall.renderTemplate(
     val enrichedContext =
         context +
             mapOf(
-                "sessionId" to (sessionData?.id ?: "anonymous"),
+                "sessionId" to (sessionData?.user_id ?: "anonymous"),
                 "isHtmx" to isHtmxRequest(),
             )
 
@@ -206,6 +207,15 @@ fun Application.configureSessions() {
  * - Task CRUD: `/tasks`, `/tasks/{id}`, etc.
  */
 fun Application.configureRouting() {
+    // Interceptor to set random user_id if not exists
+    intercept(ApplicationCallPipeline.Call) {
+        val current = call.sessions.get<SessionData>()
+        if (current?.user_id == null) {
+            val userId = UUID.randomUUID().toString().substring(0, 6)
+            call.sessions.set(SessionData(user_id = userId))
+        }
+    }
+
     routing {
         // Static files (CSS, JS, HTMX library)
         staticResources("/static", "static")

@@ -86,6 +86,16 @@ object TaskRepository {
         return removed
     }
 
+    fun find(id: Int): Task? = tasks.find { it.id == id }
+
+    fun update(task: Task) {
+        val index = tasks.indexOfFirst { it.id == task.id }
+        if (index != -1) {
+            tasks[index] = task
+            persist()
+        }
+    }
+
     // TODO: Week 7 Lab 1 Activity 2 Step 6
     // Add find() and update() methods here
     // Follow instructions in mdbook to implement:
