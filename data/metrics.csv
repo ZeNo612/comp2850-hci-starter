@@ -1,2 +1,8 @@
 ts_iso,session_id,request_id,task_code,step,outcome,ms,http_status,js_mode
 
+2025-12-19T13:29:15.885799378Z,ebda6f,r_b25f5604,T1_add,submit,success,17,201,htmx
+2025-12-19T13:29:31.716418955Z,ebda6f,r_254c2073,T3_edit,submit,success,1,200,htmx
+2025-12-19T13:29:37.649693926Z,ebda6f,r_8ca628ef,T4_delete,submit,success,1,200,htmx
+2025-12-19T13:29:44.815018641Z,ebda6f,r_96868db2,T5_filter,submit,success,0,200,standard
+2025-12-19T13:34:45.176736831Z,ebda6f,r_43c1cf21,T5_filter,submit,success,10,200,standard
+2025-12-19T13:34:47.960000182Z,ebda6f,r_d49f4dbe,T5_filter,submit,success,0,200,standard
